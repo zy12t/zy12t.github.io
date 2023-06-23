@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI画图</title>
+</head>
+<body>
+        <form action="/creation" method="post">
+
+        <span>AI绘画</span>
+
+        <br>
+
+        <!--风格选择-->
+        <select name="style" required>
+            <option value="所有风格" style="display:none" selected>风格选择</option>
+            {% for item in t_options_style%}
+            <option value="{{item}}">{{item}}</option>
+            {% endfor%}
+        </select>
+
+        <!--分辨率选择-->
+        <select name="resolution" required>
+            <option value="所有分辨率" style="display:none" selected>分辨率选择</option>
+            {% for item in t_options_resolution%}
+            <option value="{{item}}">{{item}}</option>
+            {% endfor%}
+        </select>
+
+        <!--数量选择-->
+        <select name="num" required>
+            <option value="所有数量" style="display:none" selected>数量选择</option>
+            {% for item in t_options_num%}
+            <option value="{{item}}">{{item}}</option>
+            {% endfor%}
+        </select>
+
+            <br>
+
+        <!-- 对图片的描述 -->
+        <textarea rows="10" cols="150" name="describe" placeholder="对图片的描述（最多100字）" required></textarea>
+
+            <br>
+
+            <button type="submit">提交（不要多次点击）</button>
+
+
+
+
+
+
+
+
+
+        <hr>
+            <h6>*加载一般在30~90秒，请耐心等待</h6>
+
+</body>
+</html>
